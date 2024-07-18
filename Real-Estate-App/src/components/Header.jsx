@@ -1,80 +1,46 @@
-import React, { useEffect, useState } from 'react'
-import { UserContext } from '../../context/UserContext'
-import Logo from '../../assets/logo.png'
-import { Link } from 'react-router-dom'
-import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
-import DarkModeTwoToneIcon from '@mui/icons-material/DarkModeTwoTone';
-import { useRef } from 'react';
+
+
+import React from "react";
+import { Link as RouterLink } from "react-router-dom";
+import { Box, Heading, HStack, Link } from "@chakra-ui/react";
 
 const Header = () => {
-  const {userInfo, setUserInfo} = React.useContext(UserContext)
-  const [darkMode, setDarkMode] = useState(false);
-  const bodyRef = useRef(document.body);
-
-  const logoutUser = () => {
-    fetch(`${import.meta.env.VITE_BASE_URL}/api/v1/auth/logout`, {
-      credentials: 'include',
-      method: 'POST'
-    })
-    setUserInfo(null);
-  }
-
-  const handleDarkModeToggle = () => {
-    setDarkMode(!darkMode);
-  }
-
-  useEffect(()=>{
-    if(darkMode){
-      bodyRef.current.classList.add('dark-mode');
-    } else {
-      bodyRef.current.classList.remove('dark-mode');
-    }
-  }, [darkMode])
-
-  // useEffect(() => {
-  //   fetch(`${import.meta.env.VITE_BASE_URL}/api/v1/auth/profile`, {
-  //     credentials: 'include'
-  //   })
-  //   .then(res => res.json())
-  //   .then(data => setUserInfo(data.data))
-  // }, [])
-
   return (
-    <header>
-      <div className="header-container">
-        <div className="header-left">
-          <Link to="/" className="header-left-brand">
-            <img src={Logo} alt="" />
-            <h2>Awaas Vishwa</h2>
+    <Box
+      as="header"
+      bg="teal.500"
+      p={4}
+      color="white"
+      position="fixed"
+      top="0"
+      left="0"
+      right="0"
+      zIndex="sticky"
+    >
+      <HStack spacing={8} justify="space-between">
+        <Link as={RouterLink} to="/" _hover={{ textDecoration: "none" }}>
+          <Heading as="h1" size="lg">
+            Real Estate Accommodation
+          </Heading>
+        </Link>
+        <HStack as="nav" spacing={4}>
+          <Link as={RouterLink} to="/">
+            Home
           </Link>
-        </div>
-        <div className="header-right">
-          <div className='dark-mode-toggle'>
-            <button onClick={handleDarkModeToggle}>
-            {darkMode? <LightModeOutlinedIcon/> : <DarkModeTwoToneIcon/>}
-            </button>
-          </div>
-          <div className="header-right-login">
-            {
-              userInfo ? (
-                <>
-                  <Link to="/create-ad">List My Property</Link>
-                  <Link to="/profile">Profile</Link>
+          <Link as={RouterLink} to="/about">
+            About
+          </Link>
+          <Link as={RouterLink} to="/contact">
+            Contact
+          </Link>
+          <Link as={RouterLink} to="/login">
+            Login
+          </Link>
+        </HStack>
+      </HStack>
+    </Box>
+  );
+};
 
-                  <Link onClick={logoutUser}>Logout</Link>
-                </>
-              ) : (
-                <>
-                  <Link to="/login">login</Link>
-                  <Link to="/register">Signup</Link>
-                </>
-              )
-            }
-          </div>
-        </div>
-      </div>
-    </header>
-  )
-}
+export default Header;
 
-export default Header

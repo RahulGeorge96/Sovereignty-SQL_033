@@ -1,57 +1,45 @@
-import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
-import AddCircleOutlinedIcon from '@mui/icons-material/AddCircleOutlined';
-import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
 
-const footerNavLinks = [
-  {
-    link: '/',
-    icon: HomeOutlinedIcon,
-  },
-  {
-    link: '/create-ad',
-    icon: AddCircleOutlinedIcon,
-  },
-  {
-    link: '/profile',
-    icon: PermIdentityOutlinedIcon,
-  },
-]
+
+
+import React from "react";
+import { Box, Flex, Heading, Text, Link, VStack } from "@chakra-ui/react";
 
 const Footer = () => {
-  const [activePath, setActivePath] = React.useState(window.location.pathname);
   return (
-    <>
-      <div className="footer-pad"></div>
-      <footer>
-        <div className="footer-container">
-          {
-            footerNavLinks.map(
-              (navLink, index) => 
-                <FooterNavLink 
-                  key={index} 
-                  Icon={navLink.icon} 
-                  link={navLink.link}
-                  activePath={activePath}
-                  setActivePath={setActivePath}
-                />
-            )
-          }
-        </div>
-      </footer>
-    </>
-  )
-}
+    <Box as="footer" bg="gray.800" color="white" p={4}>
+      <Flex justify="space-between" flexWrap="wrap">
+        <VStack align="start" spacing={2}>
+          <Heading as="h2" size="md">
+            About Us
+          </Heading>
+          <Text>
+            We provide the best real estate listings in the city. Find your
+            dream home with us.
+          </Text>
+        </VStack>
+        <VStack align="start" spacing={2}>
+          <Heading as="h2" size="md">
+            Quick Links
+          </Heading>
+          <Link href="/">Home</Link>
+          <Link href="/about">About</Link>
+          <Link href="/contact">Contact</Link>
+        </VStack>
+        <VStack align="start" spacing={2}>
+          <Heading as="h2" size="md">
+            Follow Us
+          </Heading>
+          <Link href="https://facebook.com">Facebook</Link>
+          <Link href="https://twitter.com">Twitter</Link>
+          <Link href="https://instagram.com">Instagram</Link>
+        </VStack>
+      </Flex>
+      <Text textAlign="center" mt={4}>
+        &copy; 2024 Real Estate Listings. All rights reserved.
+      </Text>
+    </Box>
+  );
+};
 
-const FooterNavLink = ({Icon, link, activePath, setActivePath}) => {
-  return (
-    <div className="footer-nav-link">
-      <Link to={link} onClick={() => setActivePath(link)}>
-        <Icon style={{fontSize: '35px'}} color={activePath === link ? 'primary' : 'action'} />
-      </Link>
-    </div>
-  )
-}
+export default Footer;
 
-export default Footer
