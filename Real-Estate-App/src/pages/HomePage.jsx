@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from "@chakra-ui/react";
-import PropertyList from "./PropertyList";
+import PropertyList from "../components/PropertyList";
 
 const HomePage = () => {
   return (
