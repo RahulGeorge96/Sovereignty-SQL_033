@@ -1,15 +1,36 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
-import { BrowserRouter } from 'react-router-dom'
-import { ChakraProvider } from '@chakra-ui/react'
+// import React from "react";
+// import ReactDOM from "react-dom/client";
+// import App from "./App.jsx";
+// import "./index.css";
+// import { BrowserRouter } from "react-router-dom";
+// import { AuthProvider } from "./context/AuthContext.jsx";
 
+// ReactDOM.createRoot(document.getElementById("root")).render(
+//   <React.StrictMode>
+//     <BrowserRouter>
+//     <AuthProvider>
+//       <App />
+//       </AuthProvider>
+//     </BrowserRouter>
+//   </React.StrictMode>
+// );
+
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+import "./index.css";
+import { BrowserRouter } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext.jsx";
+import { ChakraProvider } from "@chakra-ui/react";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <ChakraProvider>
+  <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <AuthProvider>
+        <ChakraProvider>
+          <App />
+        </ChakraProvider>
+      </AuthProvider>
     </BrowserRouter>
-  </ChakraProvider>
+  </React.StrictMode>
 );
