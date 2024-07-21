@@ -31,16 +31,13 @@ const Footer = () => {
         </div>
         <div className="flex flex-col gap-6 items-start lg:pt-1">
           <h1 className="font-semibold">Product</h1>
-          <Link to="/sell" className="text-gray-500 text-sm font-medium">
-            Sell
-          </Link>
-          <Link to="/buy" className="text-gray-500 text-sm font-medium">
-            Buy
+          <Link to="/rent" className="text-gray-500 text-sm font-medium">
+            Rent Property
           </Link>
           <Link to="/advertise" className="text-gray-500 text-sm font-medium">
             Advertise
           </Link>
-          <Link to="/our-agent" className="text-gray-500 text-sm font-medium">
+          <Link to="/find-agent" className="text-gray-500 text-sm font-medium">
             Our agent
           </Link>
         </div>

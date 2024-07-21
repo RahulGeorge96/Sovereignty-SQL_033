@@ -33,7 +33,7 @@ const CategoryPage = () => {
   }, [category]);
 
   return (
-    <div>
+    <div style={{maxWidth:"1350px", margin:"auto", padding: "20px"}}>
       <h1 className="text-2xl font-semibold">
         Properties for {category.charAt(0).toUpperCase() + category.slice(1)}
       </h1>
