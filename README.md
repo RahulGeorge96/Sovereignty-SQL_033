@@ -1,9 +1,8 @@
 # Sovereignty SQL_033
-Construct week project work
 
 # Project Title
 
-**Real Estate and Accommodation System**
+## Real Estate and Accommodation System
 
 ## Introduction
 **Beehome** Beehome.com is the trusted platform for finding the perfect home in Bangalore. Our innovative startup offers up-to-date listings, verified agents, and a user-friendly interface, ensuring a hassle-free home search experience. With Beehome.com, finding your dream home is easier than ever.
@@ -66,5 +65,4 @@ Thanks to these wonderful people who have contributed to this project:
 
 ## Acknowledgments
 
-- Inspired by the experience of navigating the complex real estate market ourselves, we created Beehome.com to simplify the process of finding the perfect home in Bangalore..
-- Special thanks to the supportive community at Beehome.com, whose feedback and engagement have been instrumental in shaping our platform and enhancing the home search experience for everyone.
+- Inspired by the experience of navigating the complex real estate market ourselves, we created Beehome.com to simplify the process of finding the perfect home in Bangalore.
