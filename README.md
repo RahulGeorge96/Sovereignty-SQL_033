@@ -16,7 +16,7 @@ Fullstack-Web Application
 
 ## Deployed Link
 
-- Beehome.com :- [Live Demo](url)
+- Beehome.com :- [Live Demo](https://beehome-realestate.netlify.app/)
 
 ## Features
 
